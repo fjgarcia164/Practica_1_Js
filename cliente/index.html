@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas Drag and Drop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .deck {
+            border: 2px solid #333;
+            border-radius: 10px;
+            width: 200px;
+            height: 500px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            overflow-y: auto;
+        }
+        .suit {
+            border: 2px solid #333;
+            border-radius: 10px;
+            width: 150px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        .card {
+            border: 1px solid #555;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px;
+            background-color: white;
+            cursor: pointer;
+            text-align: center;
+            width: 50px; /* Ajusta el tamaño de las cartas */
+            height: 70px; /* Ajusta el tamaño de las cartas */
+        }
+        .hearts { color: red; }
+        .diamonds { color: red; }
+        .spades { color: black; }
+        .clubs { color: black; }
+        .suit.droppable {
+            border-color: #000;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Organiza las Cartas</h1>
+    <div class="container">
+        <div class="deck" id="deck"></div>
+        <div class="suit hearts" id="hearts" data-suit="hearts">Corazones ♥</div>
+        <div class="suit diamonds" id="diamonds" data-suit="diamonds">Diamantes ♦</div>
+        <div class="suit spades" id="spades" data-suit="spades">Picas ♠</div>
+        <div class="suit clubs" id="clubs" data-suit="clubs">Tréboles ♣</div>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
